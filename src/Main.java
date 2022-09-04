@@ -55,17 +55,17 @@ public class Main {
     }
 
     private static void task4() {
-        int deliveryDistance = 70; //Расстояние до клиента
+        int deliveryDistance = 150; //Расстояние до клиента
         int deliveryPerFirstDay = 20; //За сутки до 20 км
         int deliveryNextDays = 40; //Каждые следующие до 40 км плюс сутки
-        int daysForDelivery = (deliveryDistance - deliveryPerFirstDay) / deliveryNextDays;
+        int daysForDeliveryAfter20km = (deliveryDistance - deliveryPerFirstDay) / deliveryNextDays + 1;
 
         if (deliveryDistance <= 20) {
             System.out.println("Потребуется 1 день, чтобы доставить карту");
         } else if(deliveryDistance > 20 && (deliveryDistance - deliveryPerFirstDay) % deliveryNextDays ==0) {
-            System.out.println("Потребуется " + (daysForDelivery + 1) + " дней, чтобы доставить карту");
+            System.out.println("Потребуется " + daysForDeliveryAfter20km + " дней(я), чтобы доставить карту");
         } else {
-            System.out.println("Потребуется " + (daysForDelivery + 2) + " дней, чтобы доставить карту");
+            System.out.println("Потребуется " + (daysForDeliveryAfter20km + 1) + " дней(я), чтобы доставить карту");
 
             }
         }
